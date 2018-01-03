@@ -1,0 +1,1351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="tourdulichModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="chiphibuaan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="buaan" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ctthamquan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idtour" Type="int" Nullable="false" />
+          <Property Name="iddiadiem" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="diadiems">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tendiadiem" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="idtinh" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="doanbuaan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="iddoan" Type="int" Nullable="false" />
+          <Property Name="idbuaan" Type="int" Nullable="false" />
+          <Property Name="ngay" Type="datetime" Nullable="false" />
+          <Property Name="sotien" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="doandulichs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idtour" Type="int" Nullable="false" />
+          <Property Name="tendoan" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ngaykhoihanh" Type="datetime" Nullable="false" />
+          <Property Name="ngayketthuc" Type="datetime" Nullable="false" />
+          <Property Name="tongtienkhachsan" Type="float" Nullable="false" />
+          <Property Name="tongtienan" Type="float" Nullable="false" />
+          <Property Name="tongtienphuongtien" Type="float" Nullable="false" />
+          <Property Name="tongtienchiphikhac" Type="float" Nullable="false" />
+          <Property Name="tongtientour" Type="float" Nullable="false" />
+          <Property Name="tienve" Type="float" Nullable="false" />
+          <Property Name="ngaytao" Type="datetime" Nullable="false" />
+          <Property Name="trangthai" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="doankhachhang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="iddoan" Type="int" Nullable="false" />
+          <Property Name="idkhachhang" Type="int" Nullable="false" />
+          <Property Name="sotien" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="doankhachsan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="iddoan" Type="int" Nullable="false" />
+          <Property Name="idkhachsan" Type="int" Nullable="false" />
+          <Property Name="ngayden" Type="datetime" Nullable="false" />
+          <Property Name="sotien" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="doannhanvien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="iddoan" Type="int" Nullable="false" />
+          <Property Name="idnhanvien" Type="int" Nullable="false" />
+          <Property Name="idnhiemvu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="doanphikhac">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="iddoan" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ngay" Type="datetime" Nullable="false" />
+          <Property Name="note" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="sotien" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="doanphuongtien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="iddoan" Type="int" Nullable="false" />
+          <Property Name="idphuongtien" Type="int" Nullable="false" />
+          <Property Name="ngay" Type="datetime" Nullable="false" />
+          <Property Name="sotien" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="khachhangs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tenkhachhang" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="sodienthoai" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cmt" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="100" />
+          <Property Name="sex" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="khachsans">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tenkhachsan" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="idtinh" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lichsugiatour">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idtour" Type="int" Nullable="false" />
+          <Property Name="giatour" Type="float" Nullable="false" />
+          <Property Name="ngaybatdau" Type="datetime" Nullable="false" />
+          <Property Name="ngayketthuc" Type="datetime" />
+        </EntityType>
+        <EntityType Name="loaitours">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tenloaitour" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="nhanviens">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tennhanvien" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="nhiemvus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tennhiemvu" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="phuongtiens">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tenphuongtien" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tinhs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tentinh" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tours">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tentour" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="diemden" Type="int" Nullable="false" />
+          <Property Name="diemdi" Type="int" Nullable="false" />
+          <Property Name="dacdiem" Type="text" Nullable="false" />
+          <Property Name="giatour" Type="float" Nullable="false" />
+          <Property Name="idtour" Type="int" Nullable="false" />
+          <Property Name="ngaytao" Type="datetime" Nullable="false" />
+          <Property Name="ngaycapnhat" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ctthamquan_diadiem">
+          <End Role="diadiems" Type="Self.diadiems" Multiplicity="1" />
+          <End Role="ctthamquan" Type="Self.ctthamquan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="diadiems">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ctthamquan">
+              <PropertyRef Name="iddiadiem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ctthamquan_tour">
+          <End Role="tours" Type="Self.tours" Multiplicity="1" />
+          <End Role="ctthamquan" Type="Self.ctthamquan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tours">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ctthamquan">
+              <PropertyRef Name="idtour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_diadiems_tinhs">
+          <End Role="tinhs" Type="Self.tinhs" Multiplicity="1" />
+          <End Role="diadiems" Type="Self.diadiems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tinhs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="diadiems">
+              <PropertyRef Name="idtinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanbuaan_chiphibuaan">
+          <End Role="chiphibuaan" Type="Self.chiphibuaan" Multiplicity="1" />
+          <End Role="doanbuaan" Type="Self.doanbuaan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="chiphibuaan">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanbuaan">
+              <PropertyRef Name="idbuaan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanbuaan_doan">
+          <End Role="doandulichs" Type="Self.doandulichs" Multiplicity="1" />
+          <End Role="doanbuaan" Type="Self.doanbuaan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doandulichs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanbuaan">
+              <PropertyRef Name="iddoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doandulichs_tours">
+          <End Role="tours" Type="Self.tours" Multiplicity="1" />
+          <End Role="doandulichs" Type="Self.doandulichs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tours">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doandulichs">
+              <PropertyRef Name="idtour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doankhachhang_doandulichs">
+          <End Role="doandulichs" Type="Self.doandulichs" Multiplicity="1" />
+          <End Role="doankhachhang" Type="Self.doankhachhang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doandulichs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doankhachhang">
+              <PropertyRef Name="iddoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doankhachhang_khachhang">
+          <End Role="khachhangs" Type="Self.khachhangs" Multiplicity="1" />
+          <End Role="doankhachhang" Type="Self.doankhachhang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="khachhangs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doankhachhang">
+              <PropertyRef Name="idkhachhang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doankhachsan_doandulichs">
+          <End Role="doandulichs" Type="Self.doandulichs" Multiplicity="1" />
+          <End Role="doankhachsan" Type="Self.doankhachsan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doandulichs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doankhachsan">
+              <PropertyRef Name="iddoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doankhachsan_khachsan">
+          <End Role="khachsans" Type="Self.khachsans" Multiplicity="1" />
+          <End Role="doankhachsan" Type="Self.doankhachsan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="khachsans">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doankhachsan">
+              <PropertyRef Name="idkhachsan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doannhanvien_doandulichs">
+          <End Role="doandulichs" Type="Self.doandulichs" Multiplicity="1" />
+          <End Role="doannhanvien" Type="Self.doannhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doandulichs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doannhanvien">
+              <PropertyRef Name="iddoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doannhanvien_nhanviens">
+          <End Role="nhanviens" Type="Self.nhanviens" Multiplicity="1" />
+          <End Role="doannhanvien" Type="Self.doannhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhanviens">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doannhanvien">
+              <PropertyRef Name="idnhanvien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doannhanvien_nhiemvu">
+          <End Role="nhiemvus" Type="Self.nhiemvus" Multiplicity="1" />
+          <End Role="doannhanvien" Type="Self.doannhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhiemvus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doannhanvien">
+              <PropertyRef Name="idnhiemvu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanphikhac_doan">
+          <End Role="doandulichs" Type="Self.doandulichs" Multiplicity="1" />
+          <End Role="doanphikhac" Type="Self.doanphikhac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doandulichs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanphikhac">
+              <PropertyRef Name="iddoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanphuongtien_doan">
+          <End Role="doandulichs" Type="Self.doandulichs" Multiplicity="1" />
+          <End Role="doanphuongtien" Type="Self.doanphuongtien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doandulichs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanphuongtien">
+              <PropertyRef Name="iddoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanphuongtien_phuongtien">
+          <End Role="phuongtiens" Type="Self.phuongtiens" Multiplicity="1" />
+          <End Role="doanphuongtien" Type="Self.doanphuongtien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="phuongtiens">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanphuongtien">
+              <PropertyRef Name="idphuongtien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_khachsans_tinhs">
+          <End Role="tinhs" Type="Self.tinhs" Multiplicity="1" />
+          <End Role="khachsans" Type="Self.khachsans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tinhs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="khachsans">
+              <PropertyRef Name="idtinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lichsugiatour_tours">
+          <End Role="tours" Type="Self.tours" Multiplicity="1" />
+          <End Role="lichsugiatour" Type="Self.lichsugiatour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tours">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="lichsugiatour">
+              <PropertyRef Name="idtour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tours_loaitour">
+          <End Role="loaitours" Type="Self.loaitours" Multiplicity="1" />
+          <End Role="tours" Type="Self.tours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="loaitours">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tours">
+              <PropertyRef Name="idtour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tours_tinh_1">
+          <End Role="tinhs" Type="Self.tinhs" Multiplicity="1" />
+          <End Role="tours" Type="Self.tours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tinhs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tours">
+              <PropertyRef Name="diemden" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tours_tinh_2">
+          <End Role="tinhs" Type="Self.tinhs" Multiplicity="1" />
+          <End Role="tours" Type="Self.tours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tinhs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tours">
+              <PropertyRef Name="diemdi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tourdulichModelStoreContainer">
+          <EntitySet Name="chiphibuaan" EntityType="Self.chiphibuaan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ctthamquan" EntityType="Self.ctthamquan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="diadiems" EntityType="Self.diadiems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="doanbuaan" EntityType="Self.doanbuaan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="doandulichs" EntityType="Self.doandulichs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="doankhachhang" EntityType="Self.doankhachhang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="doankhachsan" EntityType="Self.doankhachsan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="doannhanvien" EntityType="Self.doannhanvien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="doanphikhac" EntityType="Self.doanphikhac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="doanphuongtien" EntityType="Self.doanphuongtien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="khachhangs" EntityType="Self.khachhangs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="khachsans" EntityType="Self.khachsans" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lichsugiatour" EntityType="Self.lichsugiatour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="loaitours" EntityType="Self.loaitours" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nhanviens" EntityType="Self.nhanviens" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nhiemvus" EntityType="Self.nhiemvus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="phuongtiens" EntityType="Self.phuongtiens" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tinhs" EntityType="Self.tinhs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tours" EntityType="Self.tours" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ctthamquan_diadiem" Association="Self.FK_ctthamquan_diadiem">
+            <End Role="diadiems" EntitySet="diadiems" />
+            <End Role="ctthamquan" EntitySet="ctthamquan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ctthamquan_tour" Association="Self.FK_ctthamquan_tour">
+            <End Role="tours" EntitySet="tours" />
+            <End Role="ctthamquan" EntitySet="ctthamquan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_diadiems_tinhs" Association="Self.FK_diadiems_tinhs">
+            <End Role="tinhs" EntitySet="tinhs" />
+            <End Role="diadiems" EntitySet="diadiems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanbuaan_chiphibuaan" Association="Self.FK_doanbuaan_chiphibuaan">
+            <End Role="chiphibuaan" EntitySet="chiphibuaan" />
+            <End Role="doanbuaan" EntitySet="doanbuaan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanbuaan_doan" Association="Self.FK_doanbuaan_doan">
+            <End Role="doandulichs" EntitySet="doandulichs" />
+            <End Role="doanbuaan" EntitySet="doanbuaan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doandulichs_tours" Association="Self.FK_doandulichs_tours">
+            <End Role="tours" EntitySet="tours" />
+            <End Role="doandulichs" EntitySet="doandulichs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doankhachhang_doandulichs" Association="Self.FK_doankhachhang_doandulichs">
+            <End Role="doandulichs" EntitySet="doandulichs" />
+            <End Role="doankhachhang" EntitySet="doankhachhang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doankhachhang_khachhang" Association="Self.FK_doankhachhang_khachhang">
+            <End Role="khachhangs" EntitySet="khachhangs" />
+            <End Role="doankhachhang" EntitySet="doankhachhang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doankhachsan_doandulichs" Association="Self.FK_doankhachsan_doandulichs">
+            <End Role="doandulichs" EntitySet="doandulichs" />
+            <End Role="doankhachsan" EntitySet="doankhachsan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doankhachsan_khachsan" Association="Self.FK_doankhachsan_khachsan">
+            <End Role="khachsans" EntitySet="khachsans" />
+            <End Role="doankhachsan" EntitySet="doankhachsan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doannhanvien_doandulichs" Association="Self.FK_doannhanvien_doandulichs">
+            <End Role="doandulichs" EntitySet="doandulichs" />
+            <End Role="doannhanvien" EntitySet="doannhanvien" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doannhanvien_nhanviens" Association="Self.FK_doannhanvien_nhanviens">
+            <End Role="nhanviens" EntitySet="nhanviens" />
+            <End Role="doannhanvien" EntitySet="doannhanvien" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doannhanvien_nhiemvu" Association="Self.FK_doannhanvien_nhiemvu">
+            <End Role="nhiemvus" EntitySet="nhiemvus" />
+            <End Role="doannhanvien" EntitySet="doannhanvien" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanphikhac_doan" Association="Self.FK_doanphikhac_doan">
+            <End Role="doandulichs" EntitySet="doandulichs" />
+            <End Role="doanphikhac" EntitySet="doanphikhac" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanphuongtien_doan" Association="Self.FK_doanphuongtien_doan">
+            <End Role="doandulichs" EntitySet="doandulichs" />
+            <End Role="doanphuongtien" EntitySet="doanphuongtien" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanphuongtien_phuongtien" Association="Self.FK_doanphuongtien_phuongtien">
+            <End Role="phuongtiens" EntitySet="phuongtiens" />
+            <End Role="doanphuongtien" EntitySet="doanphuongtien" />
+          </AssociationSet>
+          <AssociationSet Name="FK_khachsans_tinhs" Association="Self.FK_khachsans_tinhs">
+            <End Role="tinhs" EntitySet="tinhs" />
+            <End Role="khachsans" EntitySet="khachsans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lichsugiatour_tours" Association="Self.FK_lichsugiatour_tours">
+            <End Role="tours" EntitySet="tours" />
+            <End Role="lichsugiatour" EntitySet="lichsugiatour" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tours_loaitour" Association="Self.FK_tours_loaitour">
+            <End Role="loaitours" EntitySet="loaitours" />
+            <End Role="tours" EntitySet="tours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tours_tinh_1" Association="Self.FK_tours_tinh_1">
+            <End Role="tinhs" EntitySet="tinhs" />
+            <End Role="tours" EntitySet="tours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tours_tinh_2" Association="Self.FK_tours_tinh_2">
+            <End Role="tinhs" EntitySet="tinhs" />
+            <End Role="tours" EntitySet="tours" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tourdulichModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="chiphibuaan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="buaan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="doanbuaans" Relationship="Self.FK_doanbuaan_chiphibuaan" FromRole="chiphibuaan" ToRole="doanbuaan" />
+        </EntityType>
+        <EntityType Name="ctthamquan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idtour" Type="Int32" Nullable="false" />
+          <Property Name="iddiadiem" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="diadiem" Relationship="Self.FK_ctthamquan_diadiem" FromRole="ctthamquan" ToRole="diadiems" />
+          <NavigationProperty Name="tour" Relationship="Self.FK_ctthamquan_tour" FromRole="ctthamquan" ToRole="tours" />
+        </EntityType>
+        <EntityType Name="diadiem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tendiadiem" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idtinh" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ctthamquans" Relationship="Self.FK_ctthamquan_diadiem" FromRole="diadiems" ToRole="ctthamquan" />
+          <NavigationProperty Name="tinh" Relationship="Self.FK_diadiems_tinhs" FromRole="diadiems" ToRole="tinhs" />
+        </EntityType>
+        <EntityType Name="doanbuaan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="iddoan" Type="Int32" Nullable="false" />
+          <Property Name="idbuaan" Type="Int32" Nullable="false" />
+          <Property Name="ngay" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sotien" Type="Double" Nullable="false" />
+          <NavigationProperty Name="chiphibuaan" Relationship="Self.FK_doanbuaan_chiphibuaan" FromRole="doanbuaan" ToRole="chiphibuaan" />
+          <NavigationProperty Name="doandulich" Relationship="Self.FK_doanbuaan_doan" FromRole="doanbuaan" ToRole="doandulichs" />
+        </EntityType>
+        <EntityType Name="doandulich">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idtour" Type="Int32" Nullable="false" />
+          <Property Name="tendoan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ngaykhoihanh" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ngayketthuc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="tongtienkhachsan" Type="Double" Nullable="false" />
+          <Property Name="tongtienan" Type="Double" Nullable="false" />
+          <Property Name="tongtienphuongtien" Type="Double" Nullable="false" />
+          <Property Name="tongtienchiphikhac" Type="Double" Nullable="false" />
+          <Property Name="tongtientour" Type="Double" Nullable="false" />
+          <Property Name="tienve" Type="Double" Nullable="false" />
+          <Property Name="ngaytao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="trangthai" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="doanbuaans" Relationship="Self.FK_doanbuaan_doan" FromRole="doandulichs" ToRole="doanbuaan" />
+          <NavigationProperty Name="tour" Relationship="Self.FK_doandulichs_tours" FromRole="doandulichs" ToRole="tours" />
+          <NavigationProperty Name="doankhachhangs" Relationship="Self.FK_doankhachhang_doandulichs" FromRole="doandulichs" ToRole="doankhachhang" />
+          <NavigationProperty Name="doankhachsans" Relationship="Self.FK_doankhachsan_doandulichs" FromRole="doandulichs" ToRole="doankhachsan" />
+          <NavigationProperty Name="doannhanviens" Relationship="Self.FK_doannhanvien_doandulichs" FromRole="doandulichs" ToRole="doannhanvien" />
+          <NavigationProperty Name="doanphikhacs" Relationship="Self.FK_doanphikhac_doan" FromRole="doandulichs" ToRole="doanphikhac" />
+          <NavigationProperty Name="doanphuongtiens" Relationship="Self.FK_doanphuongtien_doan" FromRole="doandulichs" ToRole="doanphuongtien" />
+        </EntityType>
+        <EntityType Name="doankhachhang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="iddoan" Type="Int32" Nullable="false" />
+          <Property Name="idkhachhang" Type="Int32" Nullable="false" />
+          <Property Name="sotien" Type="Double" Nullable="false" />
+          <NavigationProperty Name="doandulich" Relationship="Self.FK_doankhachhang_doandulichs" FromRole="doankhachhang" ToRole="doandulichs" />
+          <NavigationProperty Name="khachhang" Relationship="Self.FK_doankhachhang_khachhang" FromRole="doankhachhang" ToRole="khachhangs" />
+        </EntityType>
+        <EntityType Name="doankhachsan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="iddoan" Type="Int32" Nullable="false" />
+          <Property Name="idkhachsan" Type="Int32" Nullable="false" />
+          <Property Name="ngayden" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sotien" Type="Double" Nullable="false" />
+          <NavigationProperty Name="doandulich" Relationship="Self.FK_doankhachsan_doandulichs" FromRole="doankhachsan" ToRole="doandulichs" />
+          <NavigationProperty Name="khachsan" Relationship="Self.FK_doankhachsan_khachsan" FromRole="doankhachsan" ToRole="khachsans" />
+        </EntityType>
+        <EntityType Name="doannhanvien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="iddoan" Type="Int32" Nullable="false" />
+          <Property Name="idnhanvien" Type="Int32" Nullable="false" />
+          <Property Name="idnhiemvu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="doandulich" Relationship="Self.FK_doannhanvien_doandulichs" FromRole="doannhanvien" ToRole="doandulichs" />
+          <NavigationProperty Name="nhanvien" Relationship="Self.FK_doannhanvien_nhanviens" FromRole="doannhanvien" ToRole="nhanviens" />
+          <NavigationProperty Name="nhiemvu" Relationship="Self.FK_doannhanvien_nhiemvu" FromRole="doannhanvien" ToRole="nhiemvus" />
+        </EntityType>
+        <EntityType Name="doanphikhac">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="iddoan" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ngay" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sotien" Type="Double" Nullable="false" />
+          <NavigationProperty Name="doandulich" Relationship="Self.FK_doanphikhac_doan" FromRole="doanphikhac" ToRole="doandulichs" />
+        </EntityType>
+        <EntityType Name="doanphuongtien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="iddoan" Type="Int32" Nullable="false" />
+          <Property Name="idphuongtien" Type="Int32" Nullable="false" />
+          <Property Name="ngay" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sotien" Type="Double" Nullable="false" />
+          <NavigationProperty Name="doandulich" Relationship="Self.FK_doanphuongtien_doan" FromRole="doanphuongtien" ToRole="doandulichs" />
+          <NavigationProperty Name="phuongtien" Relationship="Self.FK_doanphuongtien_phuongtien" FromRole="doanphuongtien" ToRole="phuongtiens" />
+        </EntityType>
+        <EntityType Name="khachhang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tenkhachhang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sodienthoai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cmt" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="diachi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sex" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="doankhachhangs" Relationship="Self.FK_doankhachhang_khachhang" FromRole="khachhangs" ToRole="doankhachhang" />
+        </EntityType>
+        <EntityType Name="khachsan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tenkhachsan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idtinh" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="doankhachsans" Relationship="Self.FK_doankhachsan_khachsan" FromRole="khachsans" ToRole="doankhachsan" />
+          <NavigationProperty Name="tinh" Relationship="Self.FK_khachsans_tinhs" FromRole="khachsans" ToRole="tinhs" />
+        </EntityType>
+        <EntityType Name="lichsugiatour">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idtour" Type="Int32" Nullable="false" />
+          <Property Name="giatour" Type="Double" Nullable="false" />
+          <Property Name="ngaybatdau" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ngayketthuc" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tour" Relationship="Self.FK_lichsugiatour_tours" FromRole="lichsugiatour" ToRole="tours" />
+        </EntityType>
+        <EntityType Name="loaitour">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tenloaitour" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tours" Relationship="Self.FK_tours_loaitour" FromRole="loaitours" ToRole="tours" />
+        </EntityType>
+        <EntityType Name="nhanvien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tennhanvien" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="doannhanviens" Relationship="Self.FK_doannhanvien_nhanviens" FromRole="nhanviens" ToRole="doannhanvien" />
+        </EntityType>
+        <EntityType Name="nhiemvu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tennhiemvu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="doannhanviens" Relationship="Self.FK_doannhanvien_nhiemvu" FromRole="nhiemvus" ToRole="doannhanvien" />
+        </EntityType>
+        <EntityType Name="phuongtien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tenphuongtien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="doanphuongtiens" Relationship="Self.FK_doanphuongtien_phuongtien" FromRole="phuongtiens" ToRole="doanphuongtien" />
+        </EntityType>
+        <EntityType Name="tinh">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tentinh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="diadiems" Relationship="Self.FK_diadiems_tinhs" FromRole="tinhs" ToRole="diadiems" />
+          <NavigationProperty Name="khachsans" Relationship="Self.FK_khachsans_tinhs" FromRole="tinhs" ToRole="khachsans" />
+          <NavigationProperty Name="tours" Relationship="Self.FK_tours_tinh_1" FromRole="tinhs" ToRole="tours" />
+          <NavigationProperty Name="tours1" Relationship="Self.FK_tours_tinh_2" FromRole="tinhs" ToRole="tours" />
+        </EntityType>
+        <EntityType Name="tour">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tentour" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="diemden" Type="Int32" Nullable="false" />
+          <Property Name="diemdi" Type="Int32" Nullable="false" />
+          <Property Name="dacdiem" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="giatour" Type="Double" Nullable="false" />
+          <Property Name="idtour" Type="Int32" Nullable="false" />
+          <Property Name="ngaytao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ngaycapnhat" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ctthamquans" Relationship="Self.FK_ctthamquan_tour" FromRole="tours" ToRole="ctthamquan" />
+          <NavigationProperty Name="doandulichs" Relationship="Self.FK_doandulichs_tours" FromRole="tours" ToRole="doandulichs" />
+          <NavigationProperty Name="lichsugiatours" Relationship="Self.FK_lichsugiatour_tours" FromRole="tours" ToRole="lichsugiatour" />
+          <NavigationProperty Name="loaitour" Relationship="Self.FK_tours_loaitour" FromRole="tours" ToRole="loaitours" />
+          <NavigationProperty Name="tinh" Relationship="Self.FK_tours_tinh_1" FromRole="tours" ToRole="tinhs" />
+          <NavigationProperty Name="tinh1" Relationship="Self.FK_tours_tinh_2" FromRole="tours" ToRole="tinhs" />
+        </EntityType>
+        <Association Name="FK_doanbuaan_chiphibuaan">
+          <End Role="chiphibuaan" Type="Self.chiphibuaan" Multiplicity="1" />
+          <End Role="doanbuaan" Type="Self.doanbuaan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="chiphibuaan">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanbuaan">
+              <PropertyRef Name="idbuaan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ctthamquan_diadiem">
+          <End Role="diadiems" Type="Self.diadiem" Multiplicity="1" />
+          <End Role="ctthamquan" Type="Self.ctthamquan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="diadiems">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ctthamquan">
+              <PropertyRef Name="iddiadiem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ctthamquan_tour">
+          <End Role="tours" Type="Self.tour" Multiplicity="1" />
+          <End Role="ctthamquan" Type="Self.ctthamquan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tours">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ctthamquan">
+              <PropertyRef Name="idtour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_diadiems_tinhs">
+          <End Role="tinhs" Type="Self.tinh" Multiplicity="1" />
+          <End Role="diadiems" Type="Self.diadiem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tinhs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="diadiems">
+              <PropertyRef Name="idtinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanbuaan_doan">
+          <End Role="doandulichs" Type="Self.doandulich" Multiplicity="1" />
+          <End Role="doanbuaan" Type="Self.doanbuaan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doandulichs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanbuaan">
+              <PropertyRef Name="iddoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doandulichs_tours">
+          <End Role="tours" Type="Self.tour" Multiplicity="1" />
+          <End Role="doandulichs" Type="Self.doandulich" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tours">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doandulichs">
+              <PropertyRef Name="idtour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doankhachhang_doandulichs">
+          <End Role="doandulichs" Type="Self.doandulich" Multiplicity="1" />
+          <End Role="doankhachhang" Type="Self.doankhachhang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doandulichs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doankhachhang">
+              <PropertyRef Name="iddoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doankhachsan_doandulichs">
+          <End Role="doandulichs" Type="Self.doandulich" Multiplicity="1" />
+          <End Role="doankhachsan" Type="Self.doankhachsan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doandulichs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doankhachsan">
+              <PropertyRef Name="iddoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doannhanvien_doandulichs">
+          <End Role="doandulichs" Type="Self.doandulich" Multiplicity="1" />
+          <End Role="doannhanvien" Type="Self.doannhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doandulichs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doannhanvien">
+              <PropertyRef Name="iddoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanphikhac_doan">
+          <End Role="doandulichs" Type="Self.doandulich" Multiplicity="1" />
+          <End Role="doanphikhac" Type="Self.doanphikhac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doandulichs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanphikhac">
+              <PropertyRef Name="iddoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanphuongtien_doan">
+          <End Role="doandulichs" Type="Self.doandulich" Multiplicity="1" />
+          <End Role="doanphuongtien" Type="Self.doanphuongtien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doandulichs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanphuongtien">
+              <PropertyRef Name="iddoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doankhachhang_khachhang">
+          <End Role="khachhangs" Type="Self.khachhang" Multiplicity="1" />
+          <End Role="doankhachhang" Type="Self.doankhachhang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="khachhangs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doankhachhang">
+              <PropertyRef Name="idkhachhang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doankhachsan_khachsan">
+          <End Role="khachsans" Type="Self.khachsan" Multiplicity="1" />
+          <End Role="doankhachsan" Type="Self.doankhachsan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="khachsans">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doankhachsan">
+              <PropertyRef Name="idkhachsan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doannhanvien_nhanviens">
+          <End Role="nhanviens" Type="Self.nhanvien" Multiplicity="1" />
+          <End Role="doannhanvien" Type="Self.doannhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhanviens">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doannhanvien">
+              <PropertyRef Name="idnhanvien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doannhanvien_nhiemvu">
+          <End Role="nhiemvus" Type="Self.nhiemvu" Multiplicity="1" />
+          <End Role="doannhanvien" Type="Self.doannhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhiemvus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doannhanvien">
+              <PropertyRef Name="idnhiemvu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doanphuongtien_phuongtien">
+          <End Role="phuongtiens" Type="Self.phuongtien" Multiplicity="1" />
+          <End Role="doanphuongtien" Type="Self.doanphuongtien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="phuongtiens">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="doanphuongtien">
+              <PropertyRef Name="idphuongtien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_khachsans_tinhs">
+          <End Role="tinhs" Type="Self.tinh" Multiplicity="1" />
+          <End Role="khachsans" Type="Self.khachsan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tinhs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="khachsans">
+              <PropertyRef Name="idtinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lichsugiatour_tours">
+          <End Role="tours" Type="Self.tour" Multiplicity="1" />
+          <End Role="lichsugiatour" Type="Self.lichsugiatour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tours">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="lichsugiatour">
+              <PropertyRef Name="idtour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tours_loaitour">
+          <End Role="loaitours" Type="Self.loaitour" Multiplicity="1" />
+          <End Role="tours" Type="Self.tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="loaitours">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tours">
+              <PropertyRef Name="idtour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tours_tinh_1">
+          <End Role="tinhs" Type="Self.tinh" Multiplicity="1" />
+          <End Role="tours" Type="Self.tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tinhs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tours">
+              <PropertyRef Name="diemden" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tours_tinh_2">
+          <End Role="tinhs" Type="Self.tinh" Multiplicity="1" />
+          <End Role="tours" Type="Self.tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tinhs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tours">
+              <PropertyRef Name="diemdi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="chiphibuaans" EntityType="Self.chiphibuaan" />
+          <EntitySet Name="ctthamquans" EntityType="Self.ctthamquan" />
+          <EntitySet Name="diadiems" EntityType="Self.diadiem" />
+          <EntitySet Name="doanbuaans" EntityType="Self.doanbuaan" />
+          <EntitySet Name="doandulichs" EntityType="Self.doandulich" />
+          <EntitySet Name="doankhachhangs" EntityType="Self.doankhachhang" />
+          <EntitySet Name="doankhachsans" EntityType="Self.doankhachsan" />
+          <EntitySet Name="doannhanviens" EntityType="Self.doannhanvien" />
+          <EntitySet Name="doanphikhacs" EntityType="Self.doanphikhac" />
+          <EntitySet Name="doanphuongtiens" EntityType="Self.doanphuongtien" />
+          <EntitySet Name="khachhangs" EntityType="Self.khachhang" />
+          <EntitySet Name="khachsans" EntityType="Self.khachsan" />
+          <EntitySet Name="lichsugiatours" EntityType="Self.lichsugiatour" />
+          <EntitySet Name="loaitours" EntityType="Self.loaitour" />
+          <EntitySet Name="nhanviens" EntityType="Self.nhanvien" />
+          <EntitySet Name="nhiemvus" EntityType="Self.nhiemvu" />
+          <EntitySet Name="phuongtiens" EntityType="Self.phuongtien" />
+          <EntitySet Name="tinhs" EntityType="Self.tinh" />
+          <EntitySet Name="tours" EntityType="Self.tour" />
+          <AssociationSet Name="FK_doanbuaan_chiphibuaan" Association="Self.FK_doanbuaan_chiphibuaan">
+            <End Role="chiphibuaan" EntitySet="chiphibuaans" />
+            <End Role="doanbuaan" EntitySet="doanbuaans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ctthamquan_diadiem" Association="Self.FK_ctthamquan_diadiem">
+            <End Role="diadiems" EntitySet="diadiems" />
+            <End Role="ctthamquan" EntitySet="ctthamquans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ctthamquan_tour" Association="Self.FK_ctthamquan_tour">
+            <End Role="tours" EntitySet="tours" />
+            <End Role="ctthamquan" EntitySet="ctthamquans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_diadiems_tinhs" Association="Self.FK_diadiems_tinhs">
+            <End Role="tinhs" EntitySet="tinhs" />
+            <End Role="diadiems" EntitySet="diadiems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanbuaan_doan" Association="Self.FK_doanbuaan_doan">
+            <End Role="doandulichs" EntitySet="doandulichs" />
+            <End Role="doanbuaan" EntitySet="doanbuaans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doandulichs_tours" Association="Self.FK_doandulichs_tours">
+            <End Role="tours" EntitySet="tours" />
+            <End Role="doandulichs" EntitySet="doandulichs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doankhachhang_doandulichs" Association="Self.FK_doankhachhang_doandulichs">
+            <End Role="doandulichs" EntitySet="doandulichs" />
+            <End Role="doankhachhang" EntitySet="doankhachhangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doankhachsan_doandulichs" Association="Self.FK_doankhachsan_doandulichs">
+            <End Role="doandulichs" EntitySet="doandulichs" />
+            <End Role="doankhachsan" EntitySet="doankhachsans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doannhanvien_doandulichs" Association="Self.FK_doannhanvien_doandulichs">
+            <End Role="doandulichs" EntitySet="doandulichs" />
+            <End Role="doannhanvien" EntitySet="doannhanviens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanphikhac_doan" Association="Self.FK_doanphikhac_doan">
+            <End Role="doandulichs" EntitySet="doandulichs" />
+            <End Role="doanphikhac" EntitySet="doanphikhacs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanphuongtien_doan" Association="Self.FK_doanphuongtien_doan">
+            <End Role="doandulichs" EntitySet="doandulichs" />
+            <End Role="doanphuongtien" EntitySet="doanphuongtiens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doankhachhang_khachhang" Association="Self.FK_doankhachhang_khachhang">
+            <End Role="khachhangs" EntitySet="khachhangs" />
+            <End Role="doankhachhang" EntitySet="doankhachhangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doankhachsan_khachsan" Association="Self.FK_doankhachsan_khachsan">
+            <End Role="khachsans" EntitySet="khachsans" />
+            <End Role="doankhachsan" EntitySet="doankhachsans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doannhanvien_nhanviens" Association="Self.FK_doannhanvien_nhanviens">
+            <End Role="nhanviens" EntitySet="nhanviens" />
+            <End Role="doannhanvien" EntitySet="doannhanviens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doannhanvien_nhiemvu" Association="Self.FK_doannhanvien_nhiemvu">
+            <End Role="nhiemvus" EntitySet="nhiemvus" />
+            <End Role="doannhanvien" EntitySet="doannhanviens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doanphuongtien_phuongtien" Association="Self.FK_doanphuongtien_phuongtien">
+            <End Role="phuongtiens" EntitySet="phuongtiens" />
+            <End Role="doanphuongtien" EntitySet="doanphuongtiens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_khachsans_tinhs" Association="Self.FK_khachsans_tinhs">
+            <End Role="tinhs" EntitySet="tinhs" />
+            <End Role="khachsans" EntitySet="khachsans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lichsugiatour_tours" Association="Self.FK_lichsugiatour_tours">
+            <End Role="tours" EntitySet="tours" />
+            <End Role="lichsugiatour" EntitySet="lichsugiatours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tours_loaitour" Association="Self.FK_tours_loaitour">
+            <End Role="loaitours" EntitySet="loaitours" />
+            <End Role="tours" EntitySet="tours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tours_tinh_1" Association="Self.FK_tours_tinh_1">
+            <End Role="tinhs" EntitySet="tinhs" />
+            <End Role="tours" EntitySet="tours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tours_tinh_2" Association="Self.FK_tours_tinh_2">
+            <End Role="tinhs" EntitySet="tinhs" />
+            <End Role="tours" EntitySet="tours" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tourdulichModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="chiphibuaans">
+            <EntityTypeMapping TypeName="tourdulichModel.chiphibuaan">
+              <MappingFragment StoreEntitySet="chiphibuaan">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="buaan" ColumnName="buaan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ctthamquans">
+            <EntityTypeMapping TypeName="tourdulichModel.ctthamquan">
+              <MappingFragment StoreEntitySet="ctthamquan">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idtour" ColumnName="idtour" />
+                <ScalarProperty Name="iddiadiem" ColumnName="iddiadiem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="diadiems">
+            <EntityTypeMapping TypeName="tourdulichModel.diadiem">
+              <MappingFragment StoreEntitySet="diadiems">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tendiadiem" ColumnName="tendiadiem" />
+                <ScalarProperty Name="idtinh" ColumnName="idtinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="doanbuaans">
+            <EntityTypeMapping TypeName="tourdulichModel.doanbuaan">
+              <MappingFragment StoreEntitySet="doanbuaan">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="iddoan" ColumnName="iddoan" />
+                <ScalarProperty Name="idbuaan" ColumnName="idbuaan" />
+                <ScalarProperty Name="ngay" ColumnName="ngay" />
+                <ScalarProperty Name="sotien" ColumnName="sotien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="doandulichs">
+            <EntityTypeMapping TypeName="tourdulichModel.doandulich">
+              <MappingFragment StoreEntitySet="doandulichs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idtour" ColumnName="idtour" />
+                <ScalarProperty Name="tendoan" ColumnName="tendoan" />
+                <ScalarProperty Name="ngaykhoihanh" ColumnName="ngaykhoihanh" />
+                <ScalarProperty Name="ngayketthuc" ColumnName="ngayketthuc" />
+                <ScalarProperty Name="tongtienkhachsan" ColumnName="tongtienkhachsan" />
+                <ScalarProperty Name="tongtienan" ColumnName="tongtienan" />
+                <ScalarProperty Name="tongtienphuongtien" ColumnName="tongtienphuongtien" />
+                <ScalarProperty Name="tongtienchiphikhac" ColumnName="tongtienchiphikhac" />
+                <ScalarProperty Name="tongtientour" ColumnName="tongtientour" />
+                <ScalarProperty Name="tienve" ColumnName="tienve" />
+                <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="doankhachhangs">
+            <EntityTypeMapping TypeName="tourdulichModel.doankhachhang">
+              <MappingFragment StoreEntitySet="doankhachhang">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="iddoan" ColumnName="iddoan" />
+                <ScalarProperty Name="idkhachhang" ColumnName="idkhachhang" />
+                <ScalarProperty Name="sotien" ColumnName="sotien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="doankhachsans">
+            <EntityTypeMapping TypeName="tourdulichModel.doankhachsan">
+              <MappingFragment StoreEntitySet="doankhachsan">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="iddoan" ColumnName="iddoan" />
+                <ScalarProperty Name="idkhachsan" ColumnName="idkhachsan" />
+                <ScalarProperty Name="ngayden" ColumnName="ngayden" />
+                <ScalarProperty Name="sotien" ColumnName="sotien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="doannhanviens">
+            <EntityTypeMapping TypeName="tourdulichModel.doannhanvien">
+              <MappingFragment StoreEntitySet="doannhanvien">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="iddoan" ColumnName="iddoan" />
+                <ScalarProperty Name="idnhanvien" ColumnName="idnhanvien" />
+                <ScalarProperty Name="idnhiemvu" ColumnName="idnhiemvu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="doanphikhacs">
+            <EntityTypeMapping TypeName="tourdulichModel.doanphikhac">
+              <MappingFragment StoreEntitySet="doanphikhac">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="iddoan" ColumnName="iddoan" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="ngay" ColumnName="ngay" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="sotien" ColumnName="sotien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="doanphuongtiens">
+            <EntityTypeMapping TypeName="tourdulichModel.doanphuongtien">
+              <MappingFragment StoreEntitySet="doanphuongtien">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="iddoan" ColumnName="iddoan" />
+                <ScalarProperty Name="idphuongtien" ColumnName="idphuongtien" />
+                <ScalarProperty Name="ngay" ColumnName="ngay" />
+                <ScalarProperty Name="sotien" ColumnName="sotien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="khachhangs">
+            <EntityTypeMapping TypeName="tourdulichModel.khachhang">
+              <MappingFragment StoreEntitySet="khachhangs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tenkhachhang" ColumnName="tenkhachhang" />
+                <ScalarProperty Name="sodienthoai" ColumnName="sodienthoai" />
+                <ScalarProperty Name="cmt" ColumnName="cmt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="khachsans">
+            <EntityTypeMapping TypeName="tourdulichModel.khachsan">
+              <MappingFragment StoreEntitySet="khachsans">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tenkhachsan" ColumnName="tenkhachsan" />
+                <ScalarProperty Name="idtinh" ColumnName="idtinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lichsugiatours">
+            <EntityTypeMapping TypeName="tourdulichModel.lichsugiatour">
+              <MappingFragment StoreEntitySet="lichsugiatour">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idtour" ColumnName="idtour" />
+                <ScalarProperty Name="giatour" ColumnName="giatour" />
+                <ScalarProperty Name="ngaybatdau" ColumnName="ngaybatdau" />
+                <ScalarProperty Name="ngayketthuc" ColumnName="ngayketthuc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="loaitours">
+            <EntityTypeMapping TypeName="tourdulichModel.loaitour">
+              <MappingFragment StoreEntitySet="loaitours">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tenloaitour" ColumnName="tenloaitour" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nhanviens">
+            <EntityTypeMapping TypeName="tourdulichModel.nhanvien">
+              <MappingFragment StoreEntitySet="nhanviens">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tennhanvien" ColumnName="tennhanvien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nhiemvus">
+            <EntityTypeMapping TypeName="tourdulichModel.nhiemvu">
+              <MappingFragment StoreEntitySet="nhiemvus">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tennhiemvu" ColumnName="tennhiemvu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="phuongtiens">
+            <EntityTypeMapping TypeName="tourdulichModel.phuongtien">
+              <MappingFragment StoreEntitySet="phuongtiens">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tenphuongtien" ColumnName="tenphuongtien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tinhs">
+            <EntityTypeMapping TypeName="tourdulichModel.tinh">
+              <MappingFragment StoreEntitySet="tinhs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tentinh" ColumnName="tentinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tours">
+            <EntityTypeMapping TypeName="tourdulichModel.tour">
+              <MappingFragment StoreEntitySet="tours">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tentour" ColumnName="tentour" />
+                <ScalarProperty Name="diemden" ColumnName="diemden" />
+                <ScalarProperty Name="diemdi" ColumnName="diemdi" />
+                <ScalarProperty Name="dacdiem" ColumnName="dacdiem" />
+                <ScalarProperty Name="giatour" ColumnName="giatour" />
+                <ScalarProperty Name="idtour" ColumnName="idtour" />
+                <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+                <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

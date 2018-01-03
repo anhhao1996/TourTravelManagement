@@ -1,0 +1,469 @@
+﻿
+@{
+    ViewBag.Title = "CreateChitietDoandulich";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var doandulich = (MODEL.doandulich)Session["doandulich"];
+    string loi = (string)Session["loi"];
+    Session.Remove("loi");
+    bool flagkhachsan = (bool)Session["flagkhachsan"];
+    bool flagbuaan = (bool)Session["flagbuaan"];
+    bool flagphuongtien = (bool)Session["flagphuongtien"];
+    bool flagnhanvien = (bool)Session["flagnhanvien"];
+    bool flagphikhac = (bool)Session["flagphikhac"];
+    int number = 0;
+}
+@if (loi != "" && loi!=null)
+{
+    <div class="alert alert-warning" role="alert">
+        <strong>Cảnh báo !</strong>@loi
+    </div>
+}
+    
+<form action="/Doandulich/Update" method="POST" accept-charset="utf-8" name="formupdatedoan">
+    <center><h3>Chi phí của đoàn -- @doandulich.tendoan --</h3><br /><h5>Từ ngày @doandulich.ngaykhoihanh -> @doandulich.ngayketthuc  </h5></center>
+    @Html.AntiForgeryToken()
+    @*khách sạn*@
+    <div class="card mb-3">
+        <div class="card">
+            <h3 class="card-header">Chi tiết khách sạn</h3>
+            <div class="card-block card-khachsan">
+                <div class="modal fade" id="ksModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="Khachsan">Khách sạn</label></div>
+                                <div class="col-md-5">
+                                    <select name="khachsan" class="form-control">
+                                        <option value="-1">---Chọn khách sạn---</option>
+                                        @foreach (var khachsan in (Dictionary<int, string>)ViewBag.khachsan)
+                                            {
+                                            <option value="@khachsan.Key">@khachsan.Value</option>
+                                            }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="khachsanmoney">Số tiền</label></div>
+                                <div class="col-md-5"><input name="khachsanmoney" type="number" class="form-control" min="0"  value="0" /></div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="datearrive">Ngày đến</label></div>
+                                <div class="col-md-5"><input name="datearrive" type="datetime-local" class="form-control" /></div>
+                            </div>
+                            <div class="col-md-3">
+                                <input name="luukhachsan" type="submit" class="form-control btn btn-info" value="Thêm" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"><input data-toggle="modal" type="button" data-target="#ksModal" class="form-control btn btn-info" value="Thêm chi phí khách sạn" style="margin:10px 0 10px 0" /></div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Khách sạn</th>
+                            <th>Tỉnh</th>
+                            <th>Số tiền</th>
+                            <th>Ngày tới</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var khsan in (IList<MODEL.doankhachsan>)Session["doankhachsan"])
+                            {
+                                number = number + 1;
+                                <tr>
+                                    <td>@number</td>
+                                    <td>@khsan.khachsan.tenkhachsan</td>
+                                    <td>@khsan.khachsan.tinh.tentinh</td>
+                                    <td>@khsan.sotien</td>
+                                    <td>@khsan.ngayden</td>
+                                    <td><a class="btn btn-link" href=@Url.Action("deletechitiet","Doandulich",new { id=doandulich.id, detail = "khachsan",idct = number}) name="deleteKhachsan">Xoá</a></td>
+                                </tr>
+                            }
+                            number = 0;
+                        }
+
+                    </tbody>
+                </table>
+            </div>     
+        </div>
+    </div>
+    @*Phương tiện*@
+    <div class="card mb-3">
+        <div class="card">
+            <h3 class="card-header">Chi tiết phương tiện</h3>
+            <div class="card-block card-khachsan">
+                <div class="modal fade" id="PTModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="phuongtien">Phương tiện</label></div>
+                                <div class="col-md-6">
+                                    <select name="phuongtien" class="form-control">
+                                        <option value="-1">---Chọn Phương tiện---</option>
+                                        @foreach (var phuongtien in (Dictionary<int, string>)ViewBag.phuongtien)
+                                        {
+                                            <option value="@phuongtien.Key">@phuongtien.Value</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="phuongtienmoney">Số tiền</label></div>
+                                <div class="col-md-5"><input name="phuongtienmoney" type="number" class="form-control " min="0"  value="0"/></div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="dayuse">Ngày giờ sử dụng</label></div>
+                                <div class="col-md-5"><input name="dateusedayuse" type="datetime-local" class="form-control" /></div>
+                            </div>
+                            <div class="col-md-3">
+                                <input name="luuphuongtien" type="submit" class="form-control btn btn-info" value="Thêm" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"><input  data-toggle="modal" type="button" data-target="#PTModal" class="form-control btn btn-info" value="Thêm chi phí phương tiện" style="margin:10px 0 10px 0" /></div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Tên phương tiện</th>
+                            <th>Số tiền</th>
+                            <th>Ngày</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                                foreach (var pt in (IList<MODEL.doanphuongtien>)Session["doanphuongtien"])
+                                {
+                                    number = number + 1;
+                                    <tr>
+                                        <td>@number</td>
+                                        <td>@pt.phuongtien.tenphuongtien</td>
+                                        <td>@pt.sotien</td>
+                                        <td>@pt.ngay</td>
+                                        <td><a class="btn btn-link" href=@Url.Action("deletechitiet","Doandulich",new { id=doandulich.id, detail = "phuongtien",idct = number}) >Xoá</a></td>
+                                    </tr>
+                            }
+                            number = 0;
+                        }
+                    </tbody>
+                </table>
+            </div>      
+        </div>
+    </div>
+    @*khách bữa ăn*@
+    <div class="card mb-3">
+        <div class="card">
+            <h3 class="card-header">Bữa ăn</h3>
+            <div class="card-block card-khachsan">
+                <div class="modal fade" id="BAModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="buaan">Bữa ăn</label></div>
+                                <div class="col-md-6">
+                                    <select name="buaan" class="form-control">
+                                        <option value="-1">---Chọn Bữa ăn---</option>
+                                        @foreach (var buaan in (Dictionary<int, string>)ViewBag.buaan)
+                                        {
+                                            <option value="@buaan.Key">@buaan.Value</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="bamoney">Số tiền</label></div>
+                                <div class="col-md-5"><input name="bamoney" type="number" class="form-control" min="0"  value="0" /></div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="ngayeat">Ngày đến</label></div>
+                                <div class="col-md-5"><input name="ngayeat" type="datetime-local" class="form-control" /></div>
+                            </div>
+                            <div class="col-md-3">
+                                <input name="luubuaan" type="submit" class="form-control btn btn-info" value="Thêm " />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"><input data-toggle="modal" type="button" data-target="#BAModal" class="form-control btn btn-info" value="Thêm chi phí bữa ăn" style="margin:10px 0 10px 0" /></div>
+                <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Bữa ăn</th>
+                                        <th>Số tiền</th>
+                                        <th>Ngày</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+
+                                        foreach (var ba in (IList<MODEL.doanbuaan>)Session["doanbuaan"])
+                                        {
+                                            number = number + 1;
+                                                <tr>
+                                                    <td>@number</td>
+                                                    <td>@ba.chiphibuaan.buaan</td>
+                                                    <td>@ba.sotien</td>
+                                                    <td>@ba.ngay</td>
+                                                    <td><a class="btn btn-link" href=@Url.Action("deletechitiet","Doandulich",new { id=doandulich.id, detail = "buaan",idct = number})>Xoá</a></td>
+                                                </tr>
+                                        }
+                                        number = 0;
+                                        }
+                                </tbody>
+                            </table>
+                </div>
+        </div>
+     </div>              
+    @*Chi phí khác*@
+    <div class="card mb-3">
+        <div class="card">
+            <h3 class="card-header">Chi phí khác</h3>
+            <div class="card-block card-khachsan">
+                <div class="modal fade" id="PhikhacModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="phikhac">Chi phí khác</label></div>
+                                <div class="col-md-5"><input name="phikhac" type="text" class="form-control " placeholder="Tên chi phí khác" /></div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="phikhacmoney">Số tiền</label></div>
+                                <div class="col-md-5"><input name="phikhacmoney" type="number" class="form-control" min="0" value="0" /></div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="note">Ghi chú</label></div>
+                                <div class="col-md-5">
+                                    <textarea class="form-control" name="note" cols="3" style="width:300px;"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="datephikhac">Ngày</label></div>
+                                <div class="col-md-5"><input name="datephikhac" type="datetime-local" class="form-control" /></div>
+                            </div>
+                            <div class="col-md-3">
+                                <input name="luuchiphikhac" type="submit" class="form-control btn btn-info" value="Thêm" />
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-md-3"><input data-toggle="modal" type="button" data-target="#PhikhacModal" class="form-control btn btn-info" value="Thêm chi phí khác" style="margin:10px 0 10px 0" /></div>
+                <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Tên phí khác</th>
+                                        <th>Số tiền</th>
+                                        <th>Ngày</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+
+                                        foreach (var phikhac in (IList<MODEL.doanphikhac>)Session["doanchiphikhac"])
+                                        {
+                                            number = number + 1;
+                                            <tr>
+                                                <td>@number</td>
+                                                <td>@phikhac.name</td>
+                                                <td>@phikhac.sotien</td>
+                                                <td>@phikhac.ngay</td>
+                                                <td><a class="btn btn-link" href=@Url.Action("deletechitiet","Doandulich",new { id=doandulich.id, detail = "phikhac",idct = number})>Xoá</a></td>
+                                            </tr>
+                                        }
+                                        number = 0;
+                                    }
+                                </tbody>
+                            </table>
+                </div>
+        </div>
+    </div>
+    @*Nhân viên và nhiệm vụ*@
+    <div class="card mb-3">
+        <div class="card">
+            <h3 class="card-header">Nhân viên và nhiệm vụ</h3>
+            <div class="card-block card-khachsan">
+                <div class="modal fade" id="NVModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="form-inline">
+                                <div class="col-md-3"><label for="nhanvien">Nhân viên</label></div>
+                                <div class="col-md-3">
+                                    <select name="nhanvien" class="form-control">
+                                        <option value="-1">---Chọn nhân viên---</option>
+                                        @foreach (var nhanvien in (Dictionary<int, string>)ViewBag.nhanvien)
+                                        {
+                                        <option value="@nhanvien.Key">@nhanvien.Value</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-inline">
+                                    <div class="col-md-4"><label for="nhiemvu">Nhiệm vụ</label></div>
+                                        <div class="col-md-3">
+                                        <select name="nhiemvu" class="form-control">
+                                            <option value="-1">---Chọn nhiệm vụ---</option>
+                                            @foreach (var nhiemvu in (Dictionary<int, string>)ViewBag.nhiemvu)
+                                            {
+                                                <option value="@nhiemvu.Key">@nhiemvu.Value</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    </div>
+                                </div>
+                            <div class="col-md-3">
+                                <input name="luunhanvien" type="submit" class="form-control btn btn-info" value="Thêm" />
+                            </div>
+                         </div>
+                     </div>
+                  </div>
+                <div class="col-md-3"><input data-toggle="modal"  type="button" data-target="#NVModal" class="form-control btn btn-info" value="Thêm nhân viên và nhiệm vụ" style="margin:10px 0 10px 0" /></div>
+                <table class="table table-bordered">
+                    
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Tên nhân viên</th>
+                                        <th>Nhiệm vụ</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    @{
+
+                                        foreach (var nv in (IList<MODEL.doannhanvien>)Session["doannhanvien"])
+                                        {
+                                            number = number + 1;
+                                            <tr>
+                                                <td>@number</td>
+                                                <td>@nv.nhanvien.tennhanvien</td>
+                                                <td>@nv.nhiemvu.tennhiemvu</td>
+                                                <td><a class="btn btn-link" href=@Url.Action("deletechitiet","Doandulich",new { id=doandulich.id, detail = "nhanvien",idct = number})>Xoá</a></td>
+                                            </tr>
+                                        }
+                                        number = 0;
+                                    }
+                                </tbody>
+                            </table>
+            </div>
+         </div>
+    </div>
+    <div class="row">
+        @if (!flagkhachsan && !flagbuaan && !flagphuongtien && !flagnhanvien && !flagphikhac)
+        {
+            <div class="col-md-4" style="margin:30px;">
+                <input name="luu" type="submit" class="form-control btn btn-info" value="Lưu tất cả"  disabled/>
+            </div>
+            <div class="col-md-4" style="margin:30px;">
+                <input name="cancel" type="submit" class="form-control btn btn-danger" value="Huỷ" disabled>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-4" style="margin:30px;">
+                <input name="luu" type="submit" class="form-control btn btn-info" value="Lưu tất cả" />
+            </div>
+            <div class="col-md-4" style="margin:30px;">
+                <input name="cancel" type="submit" class="form-control btn btn-danger" value="Huỷ">
+            </div>
+
+        }
+        
+    </div>
+</form>
+    @*<div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i>danh sách khách
+        </div>
+        <div class="card-body">
+            <div class="table-bordered table-hover">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Tên khách</th>
+                            <th>Số điện thoại</th>
+                            <th>Chứng minh thư</th>
+                            <th>Địa chỉ</th>
+                            <th>Giới tính</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Admin</td>
+                            <td>Lê hoàng trung</td>
+                            <td>450000 VNĐ</td>
+                            <td>Rating 2 lần 1 sao</td>
+                            <td>Rating 2 lần 1 sao</td>
+                            <td>
+                                <div class="btn-group groupaction" role="group">
+                                    <button data-toggle="dropdown" class="btn btn-outline-primary dropdown-toggle" title="Action">
+                                        Hành động
+                                        <span class="caret">
+                                        </span>
+                                    </button>
+                                    <ul class="dropdown-menu" style="min-width: 120px!important">
+                                        <li>
+                                            <button class="btn btn-outline-info" id="view" type="button" data-toggle="modal" data-target="#updatekhach">sửa</button>
+                                        </li>
+                                        <li>
+                                            <a href=""><button class="btn btn-outline-danger" name="block" id="status">Xoá</button></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="createDoandulich" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thông tin của khách</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="padding: 20px;">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Tên khách</label>
+                                <input class="form-control" type="text" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại</label>
+                                <input class="form-control" type="number" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="start_at">Chứng minh thư</label>
+                                <input class="form-control" type="datetime" name="start_at">
+                            </div>
+                            <div class="form-group">
+                                <label for="finish_at">địa chỉ</label>
+                                <input class="form-control" type="text" name="finish_at">
+                            </div>
+                            <button class="btn-outline-primary">Thêm khách</button>
+                            <button class="btn-outline-info">Sửa khách</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@

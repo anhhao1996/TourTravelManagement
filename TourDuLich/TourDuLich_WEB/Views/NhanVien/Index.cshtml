@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string loi = (string)Session["loi"];
+    string tennhanvien = "";
+    int solanditour = 0;
+    List<MODEL.doannhanvien> list = (List<MODEL.doannhanvien>)Session["listdoannhanvien"];
+}
+@if (loi != "" && loi != null)
+{
+    <div class="alert alert-warning" role="alert">
+        <strong>Cảnh báo ! </strong>@loi
+    </div>
+}
+<form action="/NhanVien/Statistics" method="post" name="Statisticsform">
+    <div class="card mb-3">
+        <div class="card-header">
+            Thống kê số lần đi tour của nhân viên trong khoảng thời gian
+        </div>
+        <div class="card-body body-statistics">
+            <div class="form-inline">
+                <div class="col-md-3"><label for="NhanVien"><b>Mã nhân viên</b></label></div>
+                <div class="col-md-5">
+                    <div class="col-md-3"><input class="form-control" name="NhanVien" type="text" /></div>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="col-md-3"><label for="datefrom"><b>Từ ngày</b></label></div>
+                <div class="col-md-3"><input type="date" name="datefrom" class="form-control" required /></div>
+                <div class="col-md-2"><label for="dateend"><b>Đến ngày</b></label></div>
+                <div class="col-md-3"><input type="date" name="dateend" class="form-control" required /></div>
+            </div>
+            <div class="form-inline">
+                <div class="col-md-3" style="margin-left:255px;"><input type="submit" name="statistics" class="btn btn-info" value="Thống kê" /></div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="card mb-3">
+    <div class="card-header">
+        Kết quả
+    </div>
+    <div class="card-body body-statistics">
+        <div class="col-md-12 form-inline">
+            @if (Session["startdate"] != null)
+            {
+                string start = ((DateTime)Session["startdate"]).ToString("dd/MM/yyyy");
+                <div class="col-md-2" style="color:red;"><b>Từ ngày :</b></div><div class="col-md-3"><input class="form-control" type="text" readonly value="@start" /></div>
+            }
+            @if (Session["enddate"] != null)
+            {
+                string end = ((DateTime)Session["enddate"]).ToString("dd/MM/yyyy");
+                <div class="col-md-2" style="color:red;"><b>Tới ngày :</b></div><div class="col-md-3"><input class="form-control" type="text" readonly value="@end" /></div>
+            }
+        </div>
+        <div class="col-md-12 form-inline">
+            @if (Session["tennhanvien"] != null)
+            {
+                tennhanvien = (string)Session["tennhanvien"];
+                <div class="col-md-2" style="color:red;"><b>Tên nhân viên :</b></div><div class="col-md-3"><input class="form-control" type="text" readonly value="@tennhanvien" /></div>
+            }
+            @if (Session["solanditour"] != null)
+            {
+                solanditour = (int)Session["solanditour"];
+                <div class="col-md-2" style="color:red;"><b> Số lần đi Tour :</b></div><div class="col-md-3"><input class="form-control" type="text" readonly value="@solanditour" /></div>
+            }
+        </div>
+        <hr />
+        <div class="table-bordered table-hover">
+            <table class="table table-bordered" id="dataTable" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Tên tour</th>
+                        <th>Tên đoàn</th>
+                        <th>Nhiệm vụ</th>
+                        <th>Khởi hành</th>
+                        <th>Kết thúc</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var doan in list)
+                    {
+                        <tr data-id="@doan.id" data-name="@doan.doandulich.tendoan" data-start_at="@doan.doandulich.ngaykhoihanh" data-finish_at="@doan.doandulich.ngayketthuc" data-tour="@doan.doandulich.tour.id">
+                            <td>@doan.doandulich.tour.tentour</td>
+                            <td>@doan.doandulich.tendoan</td>
+                            <td>@doan.nhiemvu.tennhiemvu</td>
+                            <td>@doan.doandulich.ngaykhoihanh</td>
+                            <td>@doan.doandulich.ngayketthuc</td>
+                        </tr>
+                    }
+
+                    @{ Session.RemoveAll();}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

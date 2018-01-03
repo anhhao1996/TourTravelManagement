@@ -1,0 +1,184 @@
+﻿@model MODEL.doandulich
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string thongbao = (string)Session["thongbao"];
+    int number = 0;
+    Session.RemoveAll();
+}
+@if (thongbao != "" && thongbao != null)
+{
+    if (thongbao.Contains("thành công"))
+    {
+        <div class="alert alert-info" role="alert">
+            <strong>Thông báo !</strong>@thongbao
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            <strong>Cảnh báo !</strong>@thongbao
+        </div>
+    }
+
+}
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+       Đoàn du lịch 
+    </li>
+    <li class="breadcrumb-item active">Danh sách</li>
+</ol>
+
+<div class="col-md-3" style="margin:20px;">
+    <button class="btn btn-outline-info" id="adddoan"  type="button" data-toggle="modal" data-target="#createDoandulich">Thêm đoàn du lịch</button>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fa fa-table"></i>danh sách đoàn du lịch
+    </div>
+    <div class="card-body">
+        <div class="table-bordered table-hover">
+            <table class="table table-bordered doandulichtable" id="dataTable" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Tên đoàn</th>
+                        <th>Ngày khởi hành</th>
+                        <th>Ngày kết thúc</th>
+                        <th>Tour</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var doan in (IList<MODEL.doandulich>)ViewBag.listdoandulich)
+                    {
+                        number = number + 1;
+                    <tr data-id="@doan.id" data-money="@doan.tienve" data-name="@doan.tendoan" data-start_at="@doan.ngaykhoihanh" data-finish_at="@doan.ngayketthuc" data-tour="@doan.tour.id" data-khach="@doan.doankhachhangs.Count">
+                        <td>@number</td>
+                        <td>@doan.tendoan</td>
+                        <td>@doan.ngaykhoihanh</td>
+                        <td>@doan.ngayketthuc</td>
+                        <td>@doan.tour.tentour</td>
+                        <td>
+                            <div class="btn-group groupaction" role="group">
+                                <button data-toggle="dropdown" class="btn btn-outline-primary dropdown-toggle" title="Action">
+                                    Hành động
+                                    <span class="caret">
+                                    </span>
+                                </button>
+                                <ul class="dropdown-menu" style="min-width: 120px!important">
+                                    <li>
+                                        <button type="button" class="btn btn-outline-info" name="inforbasic" id="inforbasic">Thông tin</button>
+                                    </li>
+                                    <li>
+                                        <a href="/Doandulich/ChitietDoandulich/@doan.id" class="btn btn-outline-info" name="detail" id="detail">Chi tiết</a>
+                                    </li>
+                                    <li> 
+                                        <a href="/Doandulich/delete/@doan.id" class="btn btn-outline-danger" name="delete" id="delete">Xoá</a>
+                                    </li>
+                                </ul>
+                             </div>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="createDoandulich" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" >Thông tin cơ bản của đoàn</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div style="padding: 20px;">   
+                    <form action="/Doandulich/CreateDoandulich" method="post" name="formdoandulich">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group" hidden>
+                            <input class="form-control" type="text" name="id">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Tên đoàn </label>
+                            <input class="form-control" type="text" name="name" required>
+                        </div>
+                        <div class="form-group" id="tour">
+                            <label for="tour">Chọn Tour</label>
+                            <select name="tour" class="form-control" style="padding:5px;">
+                                <option value="-1" selected>-----chọn tour-----</option>
+                                @foreach (var tour in (Dictionary<int,string>)ViewBag.tour)
+                                {
+                                    <option value="@tour.Key">@tour.Value Vé</option>
+                                }
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="start_at">Ngày khởi hành </label>
+                            <input class="form-control" type="datetime-local" id="start_at" name="start_at">
+                        </div>
+                        <div class="form-group">
+                            <label for="finish_at">Ngày kết thúc </label>
+                            <input class="form-control" type="datetime-local" id="finish_at" name="finish_at" >
+                        </div>
+                        @*<div class="form-group">
+                            <label for="money">Tiền Vé </label>
+                            <input class="form-control" type="number" id="money" name="money" readonly value="">
+                        </div>*@
+                        <button class="form-control btn-outline-primary" name="update">Lưu</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal" >Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+       
+            $(".doandulichtable").on('click','#inforbasic',function(){
+            var row = $(this).closest("tr");
+            var id = row.data("id");
+            var name = row.data("name");
+            var tour = row.data("tour");
+            var money = row.data("money");
+            var start_at = row.data("start_at");
+            var finish_at = row.data("finish_at");
+            var finish_at = row.data("finish_at");
+            var khach = row.data("khach");      
+            $('input[name=id]').val(id);
+            $('input[name=name]').val(name);
+            $('select[name=tour]').val(tour);
+            $('input[name=money]').val(money);
+
+            var newstart = new Date(start_at);
+            $('#start_at').val(newstart.toString("yyyy-MM-ddTHH:mm"));
+            $('#finish_at').val((new Date(finish_at)).toString("yyyy-MM-ddTHH:mm"));
+            $('select[name=tour]').removeAttr("disabled");
+            if (khach != "0")
+            {
+                $('select[name=tour]').attr("disabled", "disabled");
+            }
+            $('#createDoandulich').modal("show");
+        });
+            $("#adddoan").click(function () {
+                $('input[name=id]').val("");
+                $('input[name=name]').val("");
+                $('select[name=tour]').val(-1);
+                $('#start_at').val("");
+                $('#finish_at').val("");
+                $('select[name=tour]').removeAttr("disabled");
+                $('#createDoandulich').modal("show");
+            });
+    });
+</script>

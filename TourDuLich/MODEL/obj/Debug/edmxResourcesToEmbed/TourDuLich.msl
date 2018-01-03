@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tourdulichModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="chiphibuaans">
+      <EntityTypeMapping TypeName="tourdulichModel.chiphibuaan">
+        <MappingFragment StoreEntitySet="chiphibuaan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="buaan" ColumnName="buaan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ctthamquans">
+      <EntityTypeMapping TypeName="tourdulichModel.ctthamquan">
+        <MappingFragment StoreEntitySet="ctthamquan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idtour" ColumnName="idtour" />
+          <ScalarProperty Name="iddiadiem" ColumnName="iddiadiem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="diadiems">
+      <EntityTypeMapping TypeName="tourdulichModel.diadiem">
+        <MappingFragment StoreEntitySet="diadiems">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tendiadiem" ColumnName="tendiadiem" />
+          <ScalarProperty Name="idtinh" ColumnName="idtinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doanbuaans">
+      <EntityTypeMapping TypeName="tourdulichModel.doanbuaan">
+        <MappingFragment StoreEntitySet="doanbuaan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="iddoan" ColumnName="iddoan" />
+          <ScalarProperty Name="idbuaan" ColumnName="idbuaan" />
+          <ScalarProperty Name="ngay" ColumnName="ngay" />
+          <ScalarProperty Name="sotien" ColumnName="sotien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doandulichs">
+      <EntityTypeMapping TypeName="tourdulichModel.doandulich">
+        <MappingFragment StoreEntitySet="doandulichs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idtour" ColumnName="idtour" />
+          <ScalarProperty Name="tendoan" ColumnName="tendoan" />
+          <ScalarProperty Name="ngaykhoihanh" ColumnName="ngaykhoihanh" />
+          <ScalarProperty Name="ngayketthuc" ColumnName="ngayketthuc" />
+          <ScalarProperty Name="tongtienkhachsan" ColumnName="tongtienkhachsan" />
+          <ScalarProperty Name="tongtienan" ColumnName="tongtienan" />
+          <ScalarProperty Name="tongtienphuongtien" ColumnName="tongtienphuongtien" />
+          <ScalarProperty Name="tongtienchiphikhac" ColumnName="tongtienchiphikhac" />
+          <ScalarProperty Name="tongtientour" ColumnName="tongtientour" />
+          <ScalarProperty Name="tienve" ColumnName="tienve" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doankhachhangs">
+      <EntityTypeMapping TypeName="tourdulichModel.doankhachhang">
+        <MappingFragment StoreEntitySet="doankhachhang">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="iddoan" ColumnName="iddoan" />
+          <ScalarProperty Name="idkhachhang" ColumnName="idkhachhang" />
+          <ScalarProperty Name="sotien" ColumnName="sotien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doankhachsans">
+      <EntityTypeMapping TypeName="tourdulichModel.doankhachsan">
+        <MappingFragment StoreEntitySet="doankhachsan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="iddoan" ColumnName="iddoan" />
+          <ScalarProperty Name="idkhachsan" ColumnName="idkhachsan" />
+          <ScalarProperty Name="ngayden" ColumnName="ngayden" />
+          <ScalarProperty Name="sotien" ColumnName="sotien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doannhanviens">
+      <EntityTypeMapping TypeName="tourdulichModel.doannhanvien">
+        <MappingFragment StoreEntitySet="doannhanvien">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="iddoan" ColumnName="iddoan" />
+          <ScalarProperty Name="idnhanvien" ColumnName="idnhanvien" />
+          <ScalarProperty Name="idnhiemvu" ColumnName="idnhiemvu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doanphikhacs">
+      <EntityTypeMapping TypeName="tourdulichModel.doanphikhac">
+        <MappingFragment StoreEntitySet="doanphikhac">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="iddoan" ColumnName="iddoan" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ngay" ColumnName="ngay" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="sotien" ColumnName="sotien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doanphuongtiens">
+      <EntityTypeMapping TypeName="tourdulichModel.doanphuongtien">
+        <MappingFragment StoreEntitySet="doanphuongtien">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="iddoan" ColumnName="iddoan" />
+          <ScalarProperty Name="idphuongtien" ColumnName="idphuongtien" />
+          <ScalarProperty Name="ngay" ColumnName="ngay" />
+          <ScalarProperty Name="sotien" ColumnName="sotien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="khachhangs">
+      <EntityTypeMapping TypeName="tourdulichModel.khachhang">
+        <MappingFragment StoreEntitySet="khachhangs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenkhachhang" ColumnName="tenkhachhang" />
+          <ScalarProperty Name="sodienthoai" ColumnName="sodienthoai" />
+          <ScalarProperty Name="cmt" ColumnName="cmt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="khachsans">
+      <EntityTypeMapping TypeName="tourdulichModel.khachsan">
+        <MappingFragment StoreEntitySet="khachsans">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenkhachsan" ColumnName="tenkhachsan" />
+          <ScalarProperty Name="idtinh" ColumnName="idtinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lichsugiatours">
+      <EntityTypeMapping TypeName="tourdulichModel.lichsugiatour">
+        <MappingFragment StoreEntitySet="lichsugiatour">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idtour" ColumnName="idtour" />
+          <ScalarProperty Name="giatour" ColumnName="giatour" />
+          <ScalarProperty Name="ngaybatdau" ColumnName="ngaybatdau" />
+          <ScalarProperty Name="ngayketthuc" ColumnName="ngayketthuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loaitours">
+      <EntityTypeMapping TypeName="tourdulichModel.loaitour">
+        <MappingFragment StoreEntitySet="loaitours">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenloaitour" ColumnName="tenloaitour" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nhanviens">
+      <EntityTypeMapping TypeName="tourdulichModel.nhanvien">
+        <MappingFragment StoreEntitySet="nhanviens">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tennhanvien" ColumnName="tennhanvien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nhiemvus">
+      <EntityTypeMapping TypeName="tourdulichModel.nhiemvu">
+        <MappingFragment StoreEntitySet="nhiemvus">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tennhiemvu" ColumnName="tennhiemvu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phuongtiens">
+      <EntityTypeMapping TypeName="tourdulichModel.phuongtien">
+        <MappingFragment StoreEntitySet="phuongtiens">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenphuongtien" ColumnName="tenphuongtien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tinhs">
+      <EntityTypeMapping TypeName="tourdulichModel.tinh">
+        <MappingFragment StoreEntitySet="tinhs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tentinh" ColumnName="tentinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tours">
+      <EntityTypeMapping TypeName="tourdulichModel.tour">
+        <MappingFragment StoreEntitySet="tours">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tentour" ColumnName="tentour" />
+          <ScalarProperty Name="diemden" ColumnName="diemden" />
+          <ScalarProperty Name="diemdi" ColumnName="diemdi" />
+          <ScalarProperty Name="dacdiem" ColumnName="dacdiem" />
+          <ScalarProperty Name="giatour" ColumnName="giatour" />
+          <ScalarProperty Name="idtour" ColumnName="idtour" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

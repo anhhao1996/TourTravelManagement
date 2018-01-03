@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int number = 0;
+    string tentour = "";
+    string loi = (string)Session["loi"];
+    List<MODEL.doandulich> list = (List<MODEL.doandulich>)Session["listdoandulich"];
+    double tienks = 0, tienpt = 0, tienan = 0, tienkhac = 0;
+    if (Session["tongtienks"] != null)
+    {
+        tienks = (double)Session["tongtienks"];
+    }
+    if (Session["tongtienpt"] != null)
+    {
+        tienpt = (double)Session["tongtienpt"];
+    }
+    if (Session["tongtienan"] != null)
+    {
+        tienan = (double)Session["tongtienan"];
+    }
+    if (Session["tongtienan"] != null)
+    {
+        tienkhac = (double)Session["tongtienchiphikhac"];
+    }
+}
+@if (loi != "" && loi != null)
+{
+        <div class="alert alert-warning" role="alert">
+            <strong>Cảnh báo ! </strong>@loi
+        </div>
+}
+<form action="/ChiphiTour/Statistics" method="post" name="Statisticsform">
+    <div class="card mb-3">
+        <div class="card-header">
+            Thống kê chi phí tour trong khoảng thời gian
+        </div>
+        <div class="card-body body-statistics">
+            <div class="form-inline">
+                <div class="col-md-3"><label for="tour"><b>Tour</b></label></div>
+                <div class="col-md-5">
+                    <select name="tour" class="form-control" style="width:300px;">
+                        <option value="-1" selected>-----chọn tour-----</option>
+                        @foreach (var tour in (Dictionary<int, string>)ViewBag.tour)
+                        {
+                           <option value="@tour.Key">@tour.Value</option>
+
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="col-md-3"><label for="datefrom"><b>Từ ngày</b></label></div>
+                <div class="col-md-3"><input type="date" name="datefrom" class="form-control" required /></div>
+                <div class="col-md-2"><label for="dateend"><b>Đến ngày</b></label></div>
+                <div class="col-md-3"><input type="date" name="dateend" class="form-control" required /></div>
+            </div>
+            <div class="form-inline" >
+                <div class="col-md-3" style="margin-left:255px;"><input type="submit" name="statistics" class="btn btn-info" value="Thống kê" /></div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="card mb-3">
+    <div class="card-header">
+        Kết quả
+    </div>
+    <div class="card-body body-statistics">
+        <div class="col-md-12 form-inline">
+            @if (Session["tentour"] != null)
+            {
+                tentour = (string)Session["tentour"];
+                <div class="col-md-2" style="color:red;"><b>Tour :</b></div><div class="col-md-4"><input class="form-control" type="text" readonly value="@tentour" style="width:414px" /></div>
+            }
+        </div>
+        <div class="col-md-12 form-inline">
+            @if (Session["start"] != null)
+            {
+                string start = ((DateTime)Session["start"]).ToString("dd/MM/yyyy");
+                <div class="col-md-2" style="color:red;"><b>Từ ngày :</b></div><div class="col-md-3"><input class="form-control" type="text" readonly value="@start" /></div>
+            }
+            @if (Session["end"] != null)
+            {
+                string end = ((DateTime)Session["end"]).ToString("dd/MM/yyyy");
+                <div class="col-md-2" style="color:red;"><b>Tới ngày :</b></div><div class="col-md-3"><input class="form-control" type="text" readonly value="@end"/></div>
+            }
+        </div>
+        <hr />
+        <div class="col-md-12 form-inline">
+            <div class="col-md-3"><b>Tổng tiền khách sạn :</b></div><div class="col-md-3"><input class="form-control" type="text" readonly value="@tienks" /></div>
+            <div class="col-md-3"><b>Tổng tiền phương tiện :</b></div><div class="col-md-3"><input class="form-control" type="text" readonly value="@tienpt" /></div>
+        </div>
+        <div class="col-md-12 form-inline">
+            <div class="col-md-3"><b>Tổng tiền ăn :</b></div><div class="col-md-3"><input  class="form-control" type="text" readonly value="@tienan" /></div>
+            <div class="col-md-3"><b>Tổng tiền chi phí khác :</b></div><div class="col-md-3"><input class="form-control" type="text" readonly value="@tienkhac" /></div>
+        </div>
+        <div class="col-md-8 form-inline">
+            
+         </div>
+            <div class="table-bordered table-hover">
+                <table class="table table-bordered" id="dataTable" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Tên đoàn</th>
+                            <th>Khách sạn</th>
+                            <th>Phương tiện</th>
+                            <th>Ăn uống</th>
+                            <th>Chi  phí khác</th>
+                            <th>Khởi hành</th>
+                            <th>Kết thúc</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var doan in list)
+                        {
+                            number = number + 1;
+                            <tr data-id="@doan.id" data-name="@doan.tendoan" data-start_at="@doan.ngaykhoihanh" data-finish_at="@doan.ngayketthuc" data-tour="@doan.tour.id">
+                                <td>@doan.tendoan</td>
+                                <td>@doan.tongtienkhachsan</td>
+                                <td>@doan.tongtienphuongtien</td>
+                                <td>@doan.tongtienan</td>
+                                <td>@doan.tongtienchiphikhac</td>
+                                <td>@doan.ngaykhoihanh</td>
+                                <td>@doan.ngayketthuc</td>
+                                <td><a href="/Doandulich/ChitietDoandulich/@doan.id">Chi tiết</a></td>
+                            </tr>
+                        }
+                       
+                        @{ Session.RemoveAll();}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,60 @@
+.detailuser-table tbody tr td input{
+	margin-bottom: 10px;
+}
+#dataTable thead tr th ,td {
+	text-align: center;
+}
+.groupaction ul li{
+	padding:2px 0px 2px 16px;
+} 
+.div-modalnewsinfo div input , textarea{
+	margin-top: 10px;
+}
+.mailmodal div{
+	margin-top: 10px;
+}
+table.mailtemplatetable thead tr th.action{
+	width: 110px!important;
+}
+.formaddemployee div.form-inline {
+	margin-top: 10px;
+}
+/*.formaddemployee div.form-inline label text{
+	margin-left: 5px;
+}*/
+.infoEmploy div{
+	margin-top: 20px;
+}
+.card-khachsan div{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.card-khachsan table{
+    width:90%;
+    margin-left:50px;
+
+}
+.card-khachsan table thead tr th{
+    text-align:center;
+}
+.card-khachsan table tbody tr td{
+    text-align:center;
+}
+.card-khachhang div{
+    margin-top:5px;
+    margin-bottom:10px;
+}
+.card-khachhang table{
+    width:90%;
+    margin-left:50px;
+
+}
+.card-khachhang table thead tr th{
+    text-align:center;
+}
+.card-khachhang table tbody tr td{
+    text-align:center;
+}
+.body-statistics div{
+    margin-top:10px;
+}

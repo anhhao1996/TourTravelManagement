@@ -1,0 +1,44 @@
+C:\Users\hp\Source\Repos\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.csprojResolveAssemblyReference.cache
+C:\Users\hp\Source\Repos\tourdulich\TourDuLich\BIZ\bin\Debug\BIZ.dll
+C:\Users\hp\Source\Repos\tourdulich\TourDuLich\BIZ\bin\Debug\BIZ.pdb
+C:\Users\hp\Source\Repos\tourdulich\TourDuLich\BIZ\bin\Debug\MODEL.dll
+C:\Users\hp\Source\Repos\tourdulich\TourDuLich\BIZ\bin\Debug\EntityFramework.dll
+C:\Users\hp\Source\Repos\tourdulich\TourDuLich\BIZ\bin\Debug\MODEL.pdb
+C:\Users\hp\Source\Repos\tourdulich\TourDuLich\BIZ\bin\Debug\EntityFramework.xml
+C:\Users\hp\Source\Repos\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.dll
+C:\Users\hp\Source\Repos\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\BIZ\bin\Debug\BIZ.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\BIZ\bin\Debug\BIZ.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\BIZ\bin\Debug\MODEL.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\BIZ\bin\Debug\EntityFramework.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\BIZ\bin\Debug\MODEL.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\BIZ\bin\Debug\EntityFramework.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.csprojResolveAssemblyReference.cache
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.pdb
+G:\tourdulich\TourDuLich\BIZ\bin\Debug\BIZ.dll
+G:\tourdulich\TourDuLich\BIZ\bin\Debug\BIZ.pdb
+G:\tourdulich\TourDuLich\BIZ\bin\Debug\MODEL.dll
+G:\tourdulich\TourDuLich\BIZ\bin\Debug\EntityFramework.dll
+G:\tourdulich\TourDuLich\BIZ\bin\Debug\MODEL.pdb
+G:\tourdulich\TourDuLich\BIZ\bin\Debug\EntityFramework.xml
+G:\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.csprojResolveAssemblyReference.cache
+G:\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.dll
+G:\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.csprojResolveAssemblyReference.cache
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\BIZ\bin\Debug\BIZ.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\BIZ\bin\Debug\BIZ.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\BIZ\bin\Debug\MODEL.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\BIZ\bin\Debug\MODEL.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\BIZ\bin\Debug\EntityFramework.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\BIZ\bin\Debug\BIZ.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\BIZ\bin\Debug\BIZ.pdb
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\BIZ\bin\Debug\MODEL.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\BIZ\bin\Debug\EntityFramework.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\BIZ\bin\Debug\MODEL.pdb
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\BIZ\bin\Debug\EntityFramework.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.csprojResolveAssemblyReference.cache
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\BIZ\obj\Debug\BIZ.pdb

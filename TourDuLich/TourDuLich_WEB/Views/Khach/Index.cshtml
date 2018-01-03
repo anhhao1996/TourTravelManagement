@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int number = 0;
+    string loi = (string)Session["loi"];
+    string thongbao = (string)Session["thongbao"];
+    Session.RemoveAll();
+}
+@if (loi != "" && loi != null)
+{
+    <div class="alert alert-warning" role="alert">
+        <strong>Cảnh báo ! </strong>@loi
+    </div>
+}
+@if (thongbao != "" && thongbao != null)
+{
+    <div class="alert alert-info" role="alert">
+        <strong>Thông báo ! </strong>@thongbao
+    </div>
+}
+<div class="col-md-3" style="margin:20px;">
+    <button class="btn btn-outline-info" id="addkhach" type="button" data-toggle="modal" data-target="#updatekhach">Thêm khách hàng</button>
+</div>
+<div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i>danh sách khách
+        </div>
+        <div class="card-body">
+            <div class="table-bordered table-hover">
+                <table class="table table-bordered khtable" id="dataTable" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Tên khách</th>
+                            <th>Số điện thoại</th>
+                            <th>Chứng minh thư</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var khach in (List<MODEL.khachhang>)ViewBag.khach)
+                        {
+                            number = number + 1;
+                            <tr data-id="@khach.id" data-name="@khach.tenkhachhang" data-sdt="@khach.sodienthoai" data-sex="@khach.sex" data-address="@khach.diachi" data-cmt="@khach.cmt">
+                                <td>@number</td>
+                                <td>@khach.tenkhachhang</td>
+                                <td>@khach.sodienthoai</td>
+                                <td>@khach.cmt</td>
+                                <td>
+                                    <div class="btn-group groupaction" role="group">
+                                        <button data-toggle="dropdown" class="btn btn-outline-primary dropdown-toggle" title="Action">
+                                            Hành động
+                                            <span class="caret">
+                                            </span>
+                                        </button>
+                                        <ul class="dropdown-menu" style="min-width: 120px!important">
+                                            <li>
+                                                <button class="btn btn-outline-info" id="view" type="button" data-toggle="modal" data-target="#updatekhach">sửa</button>
+                                            </li>
+                                            <li>
+                                                <a href="/Khach/deletekhach/@khach.id"><button class="btn btn-outline-danger">Xoá</button></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="updatekhach" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thông tin của khách</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="padding: 20px;">
+                        <form name="formkhach" action="/Khach/Update" method="post">
+                            <div class="form-inline">
+                                <input class="form-control" type="text" name="id" hidden>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Tên khách</label>
+                                <input class="form-control" type="text" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sdt">Số điện thoại</label>
+                                <input class="form-control" type="number" name="sdt" maxlength="11" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cmt">Chứng minh thư</label>
+                                <input class="form-control" type="number" name="cmt" required maxlength="9" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="sex">Giới tính</label>
+                                <div class="col-md-5">
+                                    <select class="form-control" name="sex">
+                                        <option value="0">Nam</option>
+                                        <option value="1">Nữ</option>
+                                        <option value="2">giới tính khác</option>
+                                    </select>
+                                </div> 
+                            </div>
+                            <div class="form-group">
+                               <label for="address">Địa chỉ</label>
+                               <textarea class="form-control" name="address" cols="2" style="width:427px;" required></textarea>
+                            </div>
+                            <button class="form-control btn btn-outline-info" name="save">Lưu</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+    $(document).ready(function () {
+
+        $(".khtable").on('click', '#view', function () {
+            var row = $(this).closest("tr");
+            var id = row.data("id");
+            var name = row.data("name");
+            var sex = row.data("sex");
+            var cmt = row.data("cmt");
+            var sdt = row.data("sdt");
+            var address = row.data("address");
+            $('input[name=id]').val(id);
+            $('input[name=name]').val(name);
+            $('select[name=sex]').val(sex);
+            $('textarea[name=address]').val(address);
+            $('input[name=sdt]').val(sdt);
+            $('input[name=cmt]').val(cmt);
+            $('#updatekhach').modal("show");
+        });
+        $("#addkhach").click(function () {
+            $('input[name=id]').val("");
+            $('input[name=name]').val("");
+            $('select[name=sex]').val(0);
+            $('textarea[name=address]').val("");
+            $('input[name=sdt]').val("");
+            $('input[name=cmt]').val("");
+            $('#createDoandulich').modal("show");
+            });
+    });
+</script>

@@ -1,0 +1,217 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int number = 0;
+    string loi = (string)Session["loi"];
+    bool flatkh = (bool)Session["flagkh"];
+    MODEL.doandulich doandulich = (MODEL.doandulich)Session["doan"];
+    List<MODEL.khachhang> listkhachhang = (List<MODEL.khachhang>)Session["listkhachhang"];
+    List<MODEL.doankhachhang> listdoankhach = (List<MODEL.doankhachhang>)Session["doankh"];
+    Session.Remove("loi");
+}
+@if (loi!=null && loi!="")
+{
+    <div class="alert alert-warning" role="alert">
+        <strong>Cảnh báo !</strong>@loi
+    </div>
+}
+
+
+
+
+    <div class="card mb-3">
+        <div class="card">
+            <div class="card-block card-khachsan">
+                <h4 style="margin-left:10px">Danh sách khách hàng có sẵn</h4>
+                <hr />
+                <table class="table table-bordered khvaible" id="dataTable"  cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Tên khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Chứng minh thư</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var khachhang in listkhachhang)
+                            {
+                                number = number + 1;
+                                <tr>
+                                    <td>@number</td>
+                                    <td>@khachhang.tenkhachhang</td>
+                                    <td>@khachhang.sodienthoai</td>
+                                    <td>@khachhang.cmt</td>
+                                    <td><a class="btn btn-link" href="@Url.Action("AddCT","DoanKhach",new { iddoan = @doandulich.id,@idct = @khachhang.id })" name="addKh">Thêm vào đoàn</a></td>
+                                </tr>
+                            }
+                            number = 0;
+                        }
+
+                    </tbody>
+                </table>
+
+                <hr />
+                </div>
+            </div>
+        </div>
+
+
+<form action="/DoanKhach/Update" method="post" name="formdetail">
+    @Html.AntiForgeryToken();
+    <div class="card mb-3">
+        <div class="card">
+            <h3 class="card-header">Thông tin khách hàng</h3>
+
+            <div class="card-block card-khachsan">
+                <div class="modal fade" id="ksModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <h3 class="modal-header">Thông tin khách hàng</h3>
+                            <div class="form-inline">
+                                <div class="col-md-4"><label for="name">Tên khách hàng</label></div>
+                                <div class="col-md-5">
+                                    <input class="form-control" name="name" type="text" />
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-md-4"><label for="sdt">Số điện thoại</label></div>
+                                <div class="col-md-5">
+                                    <input class="form-control" name="sdt" type="number" maxlength="11" min="0"  />
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-md-4"><label for="cmt">Chứng minh thư</label></div>
+                                <div class="col-md-5">
+                                    <input class="form-control" name="cmt" type="number"  maxlength="9" min="0"/>
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-md-4"><label for="address">Địa chỉ</label></div>
+                                <div class="col-md-8">
+                                    <textarea class="form-control" name="address" cols="2" style="width:300px;" >
+                                    </textarea>  
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-md-4"><label for="sex">Giới tính</label></div>
+                                <div class="col-md-5">
+                                    <select name="sex" class="form-control">
+                                        <option value="0">Nam</option>
+                                        <option value="1">Nữ</option>
+                                        <option value="2">giới tính khác</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4" style="margin-left:165px;">
+                                <input name="addnew" type="submit" class="form-control btn btn-info" value="Thêm" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="col-md-3"><button data-toggle="modal" type="button" data-target="#ksModal" class="form-control btn btn-info"  style="margin:10px 0 10px 0"><i class="fa fa-plus"></i>Khách hàng mới</button></div>
+                </div>
+                <hr />
+                @*<h4 style="margin-left:10px">Danh sách khách hàng có sẵn</h4>
+                <table class="table table-bordered khvaible" id="dataTable"  cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Tên khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Chứng minh thư</th>
+                            <th>Số tiền</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var khachhang in listkhachhang)
+                            {
+                                number = number + 1;
+                                <tr data-doan="@doandulich.id" data-id="@khachhang.id">
+                                    <td>@number</td>
+                                    <td>@khachhang.tenkhachhang</td>
+                                    <td>@khachhang.sodienthoai</td>
+                                    <td>@khachhang.cmt</td>
+                                    <td><input type="number" placeholder="Nhập số tiền" class="form-control" name="sotien" style="width:150px" min="0"/></td>
+                                    <td><button class="btn btn-info" type="button" id="addKh">Thêm vào đoàn</button></td>
+                                </tr>
+                            }
+                            number = 0;
+                        }
+
+                    </tbody>
+                </table>*@
+
+                <hr />
+                <center> <h4 style="margin-left:10px;">Danh sách khách hàng của đoàn -- @doandulich.tendoan --</h4><br /><h5>Từ ngày @doandulich.ngaykhoihanh -> @doandulich.ngayketthuc  </h5></center>
+                <table class="table table-bordered" >
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Tên khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Chứng minh thư</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var khachhang in listdoankhach)
+                                {
+                                    number = number + 1;
+                                    <tr>
+                                        <td>@number</td>
+                                        <td>@khachhang.khachhang.tenkhachhang</td>
+                                        <td>@khachhang.khachhang.sodienthoai</td>
+                                        <td>@khachhang.khachhang.cmt</td>
+                                        <td><a class="btn btn-link" href="@Url.Action("deleteCT","DoanKhach",new { iddoan = doandulich.id , idct = number})">Xoá</a></td>
+                                    </tr>
+                                }
+                                number = 0;
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+               
+                    @if (flatkh != true)
+                    {
+                        <div class="col-md-3">
+                            <input type="submit" class="form-control btn btn-info" name="luulist" value="lưu danh sách" style="margin:30px;" disabled />
+                        </div>
+                        <div class="col-md-3" style="margin:30px;">
+                            <input name="cancel" type="submit" class="form-control btn btn-danger" value="Huỷ" disabled>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-md-3">
+                            <input type="submit" class="form-control btn btn-info" name="luulist" value="lưu danh sách" style="margin:30px;" />
+                        </div>
+                        <div class="col-md-3" style="margin:30px;">
+                            <input name="cancel" type="submit" class="form-control btn btn-danger" value="Huỷ">
+                        </div>
+                    }
+           </div>
+        </div>
+        </div>
+</form>
+<script>
+    $(document).ready(function () {
+        $('.khvaible').dataTable({
+                                    "aLengthMenu": [[5, 10, 25,50,75, -1], [5,10,25, 50, 75, "All"]],
+            "iDisplayLength": 5
+        });
+    });
+</script>
+
+
+

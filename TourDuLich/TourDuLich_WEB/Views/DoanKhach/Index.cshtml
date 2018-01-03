@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string thongbao = (string)Session["thongbao"];
+    string loi = (string)Session["loi"];
+    Session.RemoveAll();
+}
+@if (thongbao != "" && thongbao != null)
+{
+    if (thongbao.Contains("thành công"))
+    {
+        <div class="alert alert-info" role="alert">
+            <strong>Thông báo !</strong>@thongbao
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            <strong>Cảnh báo !</strong>@thongbao
+        </div>
+    }
+
+}
+@if (loi != "" && loi != null)
+{ 
+        <div class="alert alert-warning" role="alert">
+            <strong>Cảnh báo ! </strong>@loi
+        </div>
+}
+
+
+
+    <div class="card mb-3">
+        <div class="card">
+            <h3 class="card-header">Chọn đoàn du lịch</h3>
+            <div class="card-block card-khachsan">
+                <form action="/DoanKhach/Detail" method="get" id="formdoandulich">
+                    <div class="form-inline">
+                        <div class="col-md-3"><label for="Khachsan"><b>Đoàn du lịch</b></label></div>
+                        <div class="col-md-5">
+                            <select name="id" class="form-control">
+                                <option value="-1">---Chọn đoàn---</option>
+                                @foreach (var doan in (Dictionary<int, string>)ViewBag.doandulich)
+                                {
+                                    <option value="@doan.Key">@doan.Value</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </form>
+<div class="col-md-3"><button type="button"  name="choose" class="form-control btn btn-info">Cập nhật danh sách</button></div>
+            </div>
+        </div>
+    </div>
+<script>
+    $(document).ready(function () {
+        $('button[name=choose]').click(function () {
+            $('#formdoandulich').submit();
+        });
+    });
+</script>
+

@@ -1,0 +1,171 @@
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\ApplicationInsights.config
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\csc.exe
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\System.Collections.Immutable.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\System.Reflection.Metadata.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\vbc.exe
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\VBCSCompiler.exe
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\VBCSCompiler.exe.config
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\TourDuLich_WEB.dll.config
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\TourDuLich_WEB.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\TourDuLich_WEB.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Antlr3.Runtime.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.Agent.Intercept.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.DependencyCollector.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.Web.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.WindowsServer.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.ApplicationInsights.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.Web.Infrastructure.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Newtonsoft.Json.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Helpers.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Mvc.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Optimization.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Razor.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.Deployment.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.Razor.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\WebGrease.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.DependencyCollector.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.Web.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.WindowsServer.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.ApplicationInsights.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Helpers.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Mvc.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Optimization.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Razor.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.Deployment.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.Razor.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Antlr3.Runtime.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Newtonsoft.Json.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\obj\Debug\TourDuLich_WEB.csprojResolveAssemblyReference.cache
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\obj\Debug\TourDuLich_WEB.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\obj\Debug\TourDuLich_WEB.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\ApplicationInsights.config
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\csc.exe
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\System.Collections.Immutable.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\System.Reflection.Metadata.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\vbc.exe
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\VBCSCompiler.exe
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\VBCSCompiler.exe.config
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\TourDuLich_WEB.dll.config
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\TourDuLich_WEB.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\TourDuLich_WEB.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Antlr3.Runtime.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\EntityFramework.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.Agent.Intercept.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.DependencyCollector.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.Web.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.WindowsServer.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.ApplicationInsights.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.Web.Infrastructure.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Newtonsoft.Json.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Helpers.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Mvc.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Optimization.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Razor.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.Deployment.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.Razor.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\WebGrease.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\EntityFramework.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.DependencyCollector.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.Web.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.WindowsServer.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.ApplicationInsights.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Helpers.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Mvc.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Optimization.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Razor.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.Deployment.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.Razor.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Antlr3.Runtime.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\Newtonsoft.Json.xml
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\obj\Debug\TourDuLich_WEB.csprojResolveAssemblyReference.cache
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\obj\Debug\TourDuLich_WEB.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\obj\Debug\TourDuLich_WEB.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\MODEL.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\MODEL.pdb
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\BIZ.dll
+E:\GoogleDrive\PHATTRIENMOHINHPHANLOP\Tourdulich\tourdulich\tourdulich\TourDuLich\TourDuLich_WEB\bin\BIZ.pdb
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\ApplicationInsights.config
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\csc.exe
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\vbc.exe
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\VBCSCompiler.exe
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\TourDuLich_WEB.dll.config
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\TourDuLich_WEB.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\TourDuLich_WEB.pdb
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Antlr3.Runtime.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\BIZ.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\EntityFramework.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.Web.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.ApplicationInsights.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\MODEL.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Newtonsoft.Json.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Helpers.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Mvc.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Optimization.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Razor.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.Deployment.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.Razor.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\WebGrease.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\BIZ.pdb
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\MODEL.pdb
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\EntityFramework.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.Web.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.ApplicationInsights.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Helpers.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Mvc.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Optimization.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.Razor.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.Deployment.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\System.Web.WebPages.Razor.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Antlr3.Runtime.pdb
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\bin\Newtonsoft.Json.xml
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\obj\Debug\TourDuLich_WEB.csprojResolveAssemblyReference.cache
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\obj\Debug\TourDuLich_WEB.dll
+C:\Users\nbduy\OneDrive\Tài liệu\GitHub\tourdulich\TourDuLich\TourDuLich_WEB\obj\Debug\TourDuLich_WEB.pdb
